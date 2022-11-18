@@ -33,7 +33,6 @@ public class StudentView extends JFrame {
     private JTable table;
     private JScrollPane sp;
 
-
     public StudentView(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(800, 700));
@@ -116,13 +115,29 @@ public class StudentView extends JFrame {
         btnRemove.setSize(220, 30);
         panelTop.add(btnRemove);
 
+        //TODO: add the main table
+        //------Table------
+        // Column Names
+        String[] columnNames = { "Id", "First Name", "Last Name", "Email" };
+        // Mock data
+        String[][] data = new String[][] {
+                {"1", "John", "Johnson", "JJohnson@hotmail.com" },
+                {"2", "Ramón", "Hernandez", "RHernandez@gmail.com" },
+                {"3", "Juan", "Perez", "JuanP@live.com" },
+        };
+        table = new JTable(data, columnNames);
+        table.setPreferredSize(new Dimension(750, 300));
+        //Adding it to JScrollPane
+        sp = new JScrollPane(table);
+        sp.setPreferredSize(new Dimension(750, 300));
+        panelBottom.add(sp);
 
         //Panel dimensions
         panelTop.setPreferredSize(new Dimension(100, 300));
         panelBottom.setPreferredSize(new Dimension(100, 320));
 
         pack();
-        add(panelTop, BorderLayout.NORTH);
+        add(panelTop, BorderLayout.CENTER);
         add(panelBottom, BorderLayout.SOUTH);
         setLocation(500, 150);
         setVisible(true);
