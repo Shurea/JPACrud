@@ -1,20 +1,17 @@
 package com.infy.hibernate;
 
-import com.infy.hibernate.dao.IStudentDao;
-import com.infy.hibernate.dao.StudentDao;
-import com.infy.hibernate.model.Student;
 import com.infy.hibernate.view.StudentView;
 
 public class App {
     public static void main(String[] args) {
 
-//		StudentView studentView = new StudentView();
+		StudentView studentView = new StudentView();
 
-		IStudentDao studentDao = new StudentDao();
+//		IStudentDao studentDao = new StudentDao();
 //
 //		// save student test
-		Student student = new Student("Omar", "Bustamante", "omar@infy.com");
-		studentDao.saveStudent(student);
+//		Student student = new Student("Omar", "Bustamante", "omar@infy.com");
+//		studentDao.saveStudent(student);
 //
 //		// update student test
 ////		student.setFirstName("Onar");
