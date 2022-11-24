@@ -12,6 +12,7 @@ public interface IStudentDao {
     void updateStudent(Student student);
 
     //get Student By Id
+    //We might not use this one
     Student getStudentById(long id);
 
     //get All Students

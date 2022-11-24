@@ -25,10 +25,10 @@ public class StudentView extends JFrame {
     private JLabel email;
     private JTextField txtFieldEmail;
 
-    private JButton btnRefresh;
-    private JButton btnAdd;
-    private JButton btnUpdate;
-    private JButton btnRemove;
+    public JButton btnRefresh;
+    public JButton btnAdd;
+    public JButton btnUpdate;
+    public JButton btnRemove;
 
     private JTable table;
     private JScrollPane sp;
