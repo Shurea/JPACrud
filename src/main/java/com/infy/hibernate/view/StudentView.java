@@ -140,6 +140,6 @@ public class StudentView extends JFrame {
         add(panelTop, BorderLayout.CENTER);
         add(panelBottom, BorderLayout.SOUTH);
         setLocation(500, 150);
-        setVisible(true);
+//        setVisible(true);
     }
 }

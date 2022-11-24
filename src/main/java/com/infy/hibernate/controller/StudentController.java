@@ -25,6 +25,8 @@ public class StudentController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource()==view.btnRemove){
+            System.out.println("button remove test");
+        }
     }
 }

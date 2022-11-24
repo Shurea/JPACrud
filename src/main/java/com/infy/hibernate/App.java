@@ -1,11 +1,14 @@
 package com.infy.hibernate;
 
+import com.infy.hibernate.controller.StudentController;
 import com.infy.hibernate.view.StudentView;
 
 public class App {
     public static void main(String[] args) {
 
 		StudentView studentView = new StudentView();
+        StudentController controller = new StudentController(studentView);
+        studentView.setVisible(true);
 
 //		IStudentDao studentDao = new StudentDao();
 //
