@@ -1,6 +1,9 @@
 package com.infy.hibernate;
 
 import com.infy.hibernate.controller.StudentController;
+import com.infy.hibernate.dao.IStudentDao;
+import com.infy.hibernate.dao.StudentDao;
+import com.infy.hibernate.model.Student;
 import com.infy.hibernate.view.StudentView;
 
 public class App {
@@ -13,7 +16,7 @@ public class App {
 //		IStudentDao studentDao = new StudentDao();
 //
 //		// save student test
-//		Student student = new Student("Omar", "Bustamante", "omar@infy.com");
+//		Student student = new Student("Juan", "Perez", "JuanP@infy.com");
 //		studentDao.saveStudent(student);
 //
 //		// update student test
