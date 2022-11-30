@@ -87,7 +87,7 @@ public class StudentDao implements IStudentDao{
             transaction = session.beginTransaction();
 
             //get students
-            students = session.createQuery("select * from Student").list();
+            students = session.createQuery("from Student").list();
 
             //commit the transaction
             transaction.commit();

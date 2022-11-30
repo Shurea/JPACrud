@@ -6,6 +6,8 @@ import com.infy.hibernate.dao.StudentDao;
 import com.infy.hibernate.model.Student;
 import com.infy.hibernate.view.StudentView;
 
+import java.util.List;
+
 public class App {
     public static void main(String[] args) {
 
@@ -16,7 +18,7 @@ public class App {
 //		IStudentDao studentDao = new StudentDao();
 //
 //		// save student test
-//		Student student = new Student("Juan", "Perez", "JuanP@infy.com");
+//		Student student = new Student("Rogelio", "Martinez", "RogerM@infy.com");
 //		studentDao.saveStudent(student);
 //
 //		// update student test
@@ -29,7 +31,7 @@ public class App {
 //
 //		// get all students test
 //		List<Student> students = studentDao.getAllStudents();
-//		students.forEach(studnt -> System.out.println(studnt.getId()));
+//		students.forEach(studnt -> System.out.println(studnt.getFirstName()));
 //
 //		// delete student
 ////		studentDao.deleteStudent(student.getId());

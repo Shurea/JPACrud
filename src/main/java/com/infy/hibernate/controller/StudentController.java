@@ -23,6 +23,7 @@ public class StudentController implements ActionListener {
         this.view.btnAdd.addActionListener(this);
         this.view.btnUpdate.addActionListener(this);
         this.view.btnRemove.addActionListener(this);
+//        getAll(view.table);
     }
 
     // TODO: Implementar los métodos delete, update, add, getAll usando
@@ -62,6 +63,11 @@ public class StudentController implements ActionListener {
 
     public void getAll(JTable table){
         modelTable = (DefaultTableModel) table.getModel();
+        modelTable.addColumn("ID");
+        modelTable.addColumn("Email");
+        modelTable.addColumn("First Name");
+        modelTable.addColumn("Last Name");
+
         List<Student> list = dao.getAllStudents();
         Object[] object = new Object[4];
         for (int i = 0; i < list.size(); i++){
