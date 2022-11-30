@@ -36,6 +36,7 @@ public class StudentController implements ActionListener {
         }
         if (e.getSource()==view.btnAdd){
             System.out.println("button add test");
+            add();
         }
         if (e.getSource()==view.btnUpdate){
             System.out.println("button update test");
@@ -54,7 +55,15 @@ public class StudentController implements ActionListener {
     }
 
     public void add(){
+        String FName = view.txtFieldFName.getText();
+        String LName = view.txtFieldLName.getText();
+        String email = view.txtFieldEmail.getText();
 
+        student.setFirstName(FName);
+        student.setLastName(LName);
+        student.setEmail(email);
+
+        dao.saveStudent(student);
     }
 
     public void update(){

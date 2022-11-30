@@ -14,16 +14,16 @@ public class StudentView extends JFrame {
     private JLabel title;
 
     private JLabel id;
-    private JTextField txtFieldId;
+    public JTextField txtFieldId;
 
     private JLabel firstName;
-    private JTextField txtFieldFName;
+    public JTextField txtFieldFName;
 
     private JLabel lastName;
-    private JTextField txtFieldLName;
+    public JTextField txtFieldLName;
 
     private JLabel email;
-    private JTextField txtFieldEmail;
+    public JTextField txtFieldEmail;
 
     public JButton btnRefresh;
     public JButton btnAdd;
@@ -57,6 +57,7 @@ public class StudentView extends JFrame {
         txtFieldId = new JTextField();
         txtFieldId.setFont(new Font("Arial", Font.PLAIN, 15));
         txtFieldId.setPreferredSize(new Dimension(100, 30));
+        txtFieldId.setEditable(false);
         panelTop.add(txtFieldId);
         //Refresh Button
         btnRefresh = new JButton("Refresh");
