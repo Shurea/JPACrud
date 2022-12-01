@@ -17,6 +17,8 @@ public class StudentController implements ActionListener {
     StudentView view = new StudentView();
     DefaultTableModel modelTable = new DefaultTableModel();
 
+    boolean isUpdating = false;
+
     public StudentController(StudentView SView){
         this.view = SView;
         this.view.btnRefresh.addActionListener(this);
@@ -36,10 +38,31 @@ public class StudentController implements ActionListener {
         }
         if (e.getSource()==view.btnAdd){
             System.out.println("button add test");
-            add();
+            if(isUpdating){
+                update();
+                isUpdating = false;
+            }else{
+                add();
+            }
         }
         if (e.getSource()==view.btnUpdate){
             System.out.println("button update test");
+            int selectedRow = view.table.getSelectedRow();
+            if (selectedRow == -1){
+                JOptionPane.showMessageDialog(view, "You must select a row!");
+            }
+            else{
+                int id = Integer.parseInt((String)view.table.getValueAt(selectedRow, 0).toString());
+                String email = (String)view.table.getValueAt(selectedRow, 1);
+                String FName = (String)view.table.getValueAt(selectedRow,2);
+                String LName = (String)view.table.getValueAt(selectedRow,3);
+
+                view.txtFieldId.setText(""+id);
+                view.txtFieldEmail.setText(email);
+                view.txtFieldFName.setText(FName);
+                view.txtFieldLName.setText(LName);
+                isUpdating = true;
+            }
         }
         if (e.getSource()==view.btnRemove){
             System.out.println("button remove test");
@@ -67,7 +90,17 @@ public class StudentController implements ActionListener {
     }
 
     public void update(){
+        int id = Integer.parseInt(view.txtFieldId.getText());
+        String FName = view.txtFieldFName.getText();
+        String LName = view.txtFieldLName.getText();
+        String email = view.txtFieldEmail.getText();
 
+        student.setId(id);
+        student.setFirstName(FName);
+        student.setLastName(LName);
+        student.setEmail(email);
+
+        dao.updateStudent(student);
     }
 
     public void getAll(JTable table){

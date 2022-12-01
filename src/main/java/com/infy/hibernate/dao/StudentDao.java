@@ -10,7 +10,6 @@ import com.infy.hibernate.model.Student;
 import com.infy.hibernate.util.HibernateUtil;
 
 public class StudentDao implements IStudentDao{
-    ResultSet rs;
 
     //save Student method
     @Override
