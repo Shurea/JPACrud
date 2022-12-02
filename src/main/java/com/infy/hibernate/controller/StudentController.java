@@ -41,9 +41,12 @@ public class StudentController implements ActionListener {
             if(isUpdating){
                 update();
                 isUpdating = false;
+                clearTable();
             }else{
                 add();
+                clearTable();
             }
+            getAll(view.table);
         }
         if (e.getSource()==view.btnUpdate){
             System.out.println("button update test");
@@ -69,8 +72,11 @@ public class StudentController implements ActionListener {
         }
     }
 
-    void clear(){
-
+    void clearTable(){
+        for (int i = 0; i < view.table.getRowCount(); i++){
+            modelTable.removeRow(i);
+            i = i-1;
+        }
     }
 
     public void delete(){
@@ -104,11 +110,14 @@ public class StudentController implements ActionListener {
     }
 
     public void getAll(JTable table){
+        clearTable();
         modelTable = (DefaultTableModel) table.getModel();
-        modelTable.addColumn("ID");
-        modelTable.addColumn("Email");
-        modelTable.addColumn("First Name");
-        modelTable.addColumn("Last Name");
+        if (modelTable.getColumnCount()<1){
+            modelTable.addColumn("ID");
+            modelTable.addColumn("Email");
+            modelTable.addColumn("First Name");
+            modelTable.addColumn("Last Name");
+        }
 
         List<Student> list = dao.getAllStudents();
         Object[] object = new Object[4];
