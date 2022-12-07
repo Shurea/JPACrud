@@ -42,9 +42,11 @@ public class StudentController implements ActionListener {
                 update();
                 isUpdating = false;
                 clearTable();
+                clearTxtFields();
             }else{
                 add();
                 clearTable();
+                clearTxtFields();
             }
             getAll(view.table);
         }
@@ -70,6 +72,15 @@ public class StudentController implements ActionListener {
         if (e.getSource()==view.btnRemove){
             System.out.println("button remove test");
         }
+    }
+
+    void clearTxtFields(){
+        view.txtFieldId.setText("");
+        view.txtFieldFName.setText("");
+        view.txtFieldLName.setText("");
+        view.txtFieldEmail.setText("");
+
+        view.txtFieldFName.requestFocus();
     }
 
     void clearTable(){
