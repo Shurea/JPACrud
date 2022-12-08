@@ -25,15 +25,14 @@ public class StudentController implements ActionListener {
         this.view.btnAdd.addActionListener(this);
         this.view.btnUpdate.addActionListener(this);
         this.view.btnRemove.addActionListener(this);
-//        getAll(view.table);
+        getAll(view.table);
     }
 
-    // TODO: Implementar los métodos delete, update, add, getAll usando
-    // el DAO para interactuar con la BD
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==view.btnRefresh){
             System.out.println("button refresh test");
+            clearTxtFields();
             getAll(view.table);
         }
         if (e.getSource()==view.btnAdd){
@@ -71,6 +70,9 @@ public class StudentController implements ActionListener {
         }
         if (e.getSource()==view.btnRemove){
             System.out.println("button remove test");
+            delete();
+            getAll(view.table);
+
         }
     }
 
@@ -91,7 +93,15 @@ public class StudentController implements ActionListener {
     }
 
     public void delete(){
-
+        int selectedRow = view.table.getSelectedRow();
+        if (selectedRow == -1){
+            JOptionPane.showMessageDialog(view,"You must select a row!");
+        }
+        else{
+            long id = Integer.parseInt((String)view.table.getValueAt(selectedRow,0).toString());
+            dao.deleteStudent(id);
+            JOptionPane.showMessageDialog(view, "Student successfully deleted!");
+        }
     }
 
     public void add(){

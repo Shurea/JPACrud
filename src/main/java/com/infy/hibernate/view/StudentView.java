@@ -77,7 +77,7 @@ public class StudentView extends JFrame {
         txtFieldFName.setSize(230, 30);
         panelTop.add(txtFieldFName);
         //Add Button
-        btnAdd = new JButton("Add");
+        btnAdd = new JButton("Save");
         btnAdd.setFont(new Font("Arial", Font.BOLD, 17));
         btnAdd.setSize(220, 30);
         panelTop.add(btnAdd);
@@ -94,7 +94,7 @@ public class StudentView extends JFrame {
         txtFieldLName.setSize(230, 30);
         panelTop.add(txtFieldLName);
         //Update Button
-        btnUpdate = new JButton("Update");
+        btnUpdate = new JButton("Edit");
         btnUpdate.setFont(new Font("Arial", Font.BOLD, 17));
         btnUpdate.setSize(220, 30);
         panelTop.add(btnUpdate);
