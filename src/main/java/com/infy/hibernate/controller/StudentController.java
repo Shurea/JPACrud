@@ -99,8 +99,12 @@ public class StudentController implements ActionListener {
         }
         else{
             long id = Integer.parseInt((String)view.table.getValueAt(selectedRow,0).toString());
-            dao.deleteStudent(id);
-            JOptionPane.showMessageDialog(view, "Student successfully deleted!");
+            int answer = JOptionPane.showConfirmDialog(view,"Confirm to delete this item");
+            // 0=yes, 1=no, 2=cancel
+            if (answer==0){
+                dao.deleteStudent(id);
+                JOptionPane.showMessageDialog(view, "Student successfully deleted!");
+            }
         }
     }
 

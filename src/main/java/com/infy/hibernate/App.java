@@ -6,13 +6,16 @@ import com.infy.hibernate.dao.StudentDao;
 import com.infy.hibernate.model.Student;
 import com.infy.hibernate.view.StudentView;
 
+import javax.swing.*;
+import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.util.List;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedLookAndFeelException {
 
 		StudentView studentView = new StudentView();
         StudentController controller = new StudentController(studentView);
+        UIManager.setLookAndFeel(new SynthLookAndFeel());
         studentView.setVisible(true);
 
 //		IStudentDao studentDao = new StudentDao();

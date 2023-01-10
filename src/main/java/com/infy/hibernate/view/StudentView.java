@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StudentView extends JFrame {
-    //TODO:Integrate BorderLayout and see if it works for us
-
     private JPanel panelTop;
     private JPanel panelBottom;
 //    private JPanel panelLeft;
@@ -116,26 +114,19 @@ public class StudentView extends JFrame {
         btnRemove.setSize(220, 30);
         panelTop.add(btnRemove);
 
-        //TODO: add the main table
-        //------Table------
-        // Column Names
-//        String[] columnNames = { "Id", "First Name", "Last Name", "Email" };
-//        // Mock data
-//        String[][] data = new String[][] {
-//                {"1", "John", "Johnson", "JJohnson@hotmail.com" },
-//                {"2", "Ramón", "Hernandez", "RHernandez@gmail.com" },
-//                {"3", "Juan", "Perez", "JuanP@live.com" },
-//        };
+        //Table
         table = new JTable();
         table.setPreferredSize(new Dimension(750, 300));
+        table.setFont(new Font("Roboto", Font.PLAIN, 19));
+        table.getTableHeader().setFont(new Font("Roboto", Font.ITALIC, 24));
         //Adding it to JScrollPane
         sp = new JScrollPane(table);
         sp.setPreferredSize(new Dimension(750, 300));
         panelBottom.add(sp);
 
         //Panel dimensions
-        panelTop.setPreferredSize(new Dimension(100, 300));
-        panelBottom.setPreferredSize(new Dimension(100, 320));
+        panelTop.setPreferredSize(new Dimension(100, 250));
+        panelBottom.setPreferredSize(new Dimension(100, 350));
 
         pack();
         add(panelTop, BorderLayout.CENTER);
